@@ -1,0 +1,1 @@
+{"root":["../DB/index.ts","../src/index.ts","../src/controllers/createUserController.ts","../src/controllers/dashboardController.ts","../src/middlewares/dahsboardMiddleware.ts","../src/middlewares/userMiddleware.ts","../src/routes/userRoutes.ts"],"version":"5.6.3"}

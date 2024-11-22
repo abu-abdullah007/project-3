@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+require("dotenv/config");
+const createUserController_1 = require("../controllers/createUserController");
+const userMiddleware_1 = require("../middlewares/userMiddleware");
+const createUserController_2 = require("../controllers/createUserController");
+const userMiddleware_2 = require("../middlewares/userMiddleware");
+const dahsboardMiddleware_1 = require("../middlewares/dahsboardMiddleware");
+const dashboardController_1 = require("../controllers/dashboardController");
+const userRouter = (0, express_1.Router)();
+userRouter.post('/signup', userMiddleware_1.checkUserMiddleware, createUserController_1.createUser);
+userRouter.post('/login', userMiddleware_2.checkDataValidation, createUserController_2.loginUser);
+userRouter.post('/dashboard', dahsboardMiddleware_1.tokenValidation, dashboardController_1.sendDashboardData);
+exports.default = userRouter;
